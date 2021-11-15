@@ -11,11 +11,16 @@ class autocomplete{
 
         try {
             this.manager().sameAxisX();
+            this.markDom();
         } catch (error) {
             isValid = false;
         }
 
         return isValid;
+    }
+
+    markDom(){
+        
     }
 }
 

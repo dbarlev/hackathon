@@ -5,7 +5,11 @@ const registerValidators = (manager) => {
         positionValidators
     ]
 
-    validators.forEach(val => new val(manager))
+    for(validator in validators){
+        const val = new validator(manager).validate();
+        if(val) exit;
+    }
+    validators.forEach(val => new val(manager).validate())
 }
 
 
