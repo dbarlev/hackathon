@@ -1,27 +1,20 @@
-const identifiersManger = require("./identifiers/manager")
 
-class autocomplete{
+class Autocomplete {
 
     constructor(manager){
         this.manager = manager;
     }
 
     validate(){
-        let isValid = true;
-
-        try {
-            this.manager().sameAxisX();
-            this.markDom();
-        } catch (error) {
-            isValid = false;
-        }
-
-        return isValid;
+        this.manager.sameAxisX().hasLinks().isInputValueExists();
+        this.markDom();
     }
 
     markDom(){
-        
+        console.log("success");
     }
 }
 
-module.export = autocomplete
+module.exports = {
+    Autocomplete
+};

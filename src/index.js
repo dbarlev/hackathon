@@ -9,9 +9,8 @@ class Startup {
     }
 
     register(){
-        const manager = new identifiersManger();
-        registerValidators(manager);
-        registerIdentifier(manager);
+        registerValidators(identifiersManger);
+        registerIdentifier(new identifiersManger());
     }
 }
 

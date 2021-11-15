@@ -1,5 +1,1 @@
-function validatorManger(){
-    
-}
-
-module.exports = validatorManger;
+module.exports = function validatorManger(){};

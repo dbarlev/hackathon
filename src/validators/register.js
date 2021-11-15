@@ -1,15 +1,15 @@
-const positionValidators = require("./positionValidators");
+const PositionValidators = require("./positionValidators");
+const DomValidators = require("./domValidators");
+const AutoCompleteValidators = require("./autocompleteValidator");
 
 const registerValidators = (manager) => {
     const validators = [
-        positionValidators
+        PositionValidators,
+        DomValidators,
+        AutoCompleteValidators
     ]
 
-    for(validator in validators){
-        const val = new validator(manager).validate();
-        if(val) exit;
-    }
-    validators.forEach(val => new val(manager).validate())
+    validators.forEach(validator => new validator(manager));
 }
 
 

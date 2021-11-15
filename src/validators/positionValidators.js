@@ -1,4 +1,4 @@
-class positionValidators{
+class PositionValidators{
     constructor(manager){
         this.manager = manager;
         this.register();
@@ -10,12 +10,12 @@ class positionValidators{
     }
 
     sameAxisX(elements){
-        return true;
+        return this;
     }
 
     sameAxisY(elements){
-        return true;
+        return this;
     }
 }
 
-module.exports = positionValidators;
+module.exports = PositionValidators;
