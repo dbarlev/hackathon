@@ -8,9 +8,9 @@ class Autocomplete {
 
     // this.manager.elContainsUnRelatedElements(addedElement).sameAxisX(addedElement);
     this.manager
+      .valExist(addedElement)
       .elContainsUnRelatedElements(addedElement)
       .sameAxisX(addedElement)
-      .valExist(addedElement)
       .isList(addedElement);
   }
 
