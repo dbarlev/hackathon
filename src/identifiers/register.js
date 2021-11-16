@@ -7,10 +7,8 @@ const registerIdentifier = (manager, addedElement) => {
     try {
       const instance = new identifier(manager);
       const isValid = instance.validate(addedElement);
-      if (isValid) {
-        instance.output();
-        break;
-      }
+      instance.output();
+      break;
     } catch (error) {
       // handle errors
     }

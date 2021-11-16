@@ -13,15 +13,19 @@ class AutoCompleteValidators{
     }
 
     valExist(element){
-        const text = window.u1Autocomplete.value;
-        const walker = getTreeWalker(element);
-    
+        const text = window.u1Autocomplete?.value;
+        window.u1Autocomplete = null;
+        const walker = this.getTreeWalker(element);
+        if(!text) {
+            throw new Error(); 
+        } 
+        let node;
         while(node = walker.nextNode()) {
             if(!node.nodeValue.toLowerCase().includes(text)) {
                 throw new Error();
             }
         }
-    
+
         return this;
     }
 
@@ -35,7 +39,7 @@ class AutoCompleteValidators{
     }
 
     isList(element) {
-        const isElList = isNativeList(element) || isLinksList(element);
+        const isElList = this.isNativeList(element) || this.isLinksList(element);
         if(isElList) {
             return this;
         } else {
@@ -44,8 +48,9 @@ class AutoCompleteValidators{
     }
 
     isNativeLIst(element) {
-        const walker = getTreeWalker(element);
+        const walker = this.getTreeWalker(element);
         
+        let node;
         while(node = walker.nextNode()) {
             const parent = node.parentElement;
             if(parent.nodeName !== 'LI'){
@@ -60,8 +65,9 @@ class AutoCompleteValidators{
     }
 
     isLinksList(element) {
-        const walker = getTreeWalker(element);
+        const walker = this.getTreeWalker(element);
         
+        let node;
         while(node = walker.nextNode()) {
             const parent = node.parentElement;
             if(parent.nodeName !== 'A'){

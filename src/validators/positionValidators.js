@@ -15,7 +15,8 @@ class PositionValidators{
                  ? NodeFilter.FILTER_ACCEPT 
                  : NodeFilter.FILTER_REJECT;
           }, false);
-        
+
+        let node;  
         let currentPosX  = 0;
         while(node = walker.nextNode()) {
             const parent = node.parentElement;
