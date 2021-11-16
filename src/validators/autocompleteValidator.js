@@ -5,10 +5,18 @@ class AutoCompleteValidators{
     }
 
     register(){
-        this.manager.prototype.isInputValueExists = this.isInputValueExists;
+        this.manager.prototype.valExist = this.valExist;
     }
 
-    isInputValueExists(text, element){
+    valExist(element){
+        const text = window.u1Autocomplete.value;
+        var walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+        
+        while(node = walker.nextNode()) {
+        if(node.nodeValue.toLowerCase().includes(text))
+            throw new Error;
+        }
+
         return this;
     }
 }

@@ -20,7 +20,9 @@
   "homepage": "https://github.com/dbarlev/hackathon#readme",
   "dependencies": {
     "live-server": "^1.2.1",
-    "webpack": "^5.64.0",
+    "webpack": "^5.64.0"
+  },
+  "devDependencies": {
     "webpack-cli": "^4.9.1"
   }
 }
