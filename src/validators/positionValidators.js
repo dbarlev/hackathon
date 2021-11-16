@@ -9,7 +9,24 @@ class PositionValidators{
         this.manager.prototype.sameAxisY = this.sameAxisY;
     }
 
-    sameAxisX(elements){
+    sameAxisX(element){
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, function(node) {
+            return (node.nodeValue.trim() !== "") 
+                 ? NodeFilter.FILTER_ACCEPT 
+                 : NodeFilter.FILTER_REJECT;
+          }, false);
+        
+        let currentPosX  = 0;
+        while(node = walker.nextNode()) {
+            const parent = node.parentElement;
+            var pos = parent.getBoundingClientRect();
+            if(currentPosX === 0) {
+                currentPosX = pos.x;
+            } else if(currentPosX !== pos.x){
+                return new Error();
+            }
+        }
+    
         return this;
     }
 

@@ -6,7 +6,7 @@ class Autocomplete {
   validate(addedElement) {
     if (!addedElement) return;
 
-    this.manager.sameAxisX().valExist(addedElement);
+    this.manager.sameAxisX(addedElement).valExist(addedElement).elContainsUnrelatedElements(addedElement).isList(addedElement);
     this.output();
   }
 
