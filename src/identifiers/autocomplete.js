@@ -9,6 +9,8 @@ class Autocomplete {
   }
 
   markDom() {
+    const elem = window.u1Autocomplete.element;
+    elem.style.border = '1px solid red';
     console.log('success');
   }
 }
