@@ -1,1 +1,1 @@
-module.exports = function validatorManger(){};
+module.exports = function validatorManger() {};

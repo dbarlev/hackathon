@@ -1,22 +1,20 @@
-
 class Autocomplete {
+  constructor(manager) {
+    this.manager = manager;
+  }
 
-    constructor(manager){
-        this.manager = manager;
-    }
+  validate(addedElement) {
+    if (!addedElement) return;
 
-    validate(addedElement){
-        if(!addedElement) return;
+    this.manager.sameAxisX().valExist(addedElement);
+    this.output();
+  }
 
-        this.manager.sameAxisX().valExist(addedElement);
-        this.output();
-    }
-
-    output(){
-        console.log("success");
-    }
+  output() {
+    console.log('success');
+  }
 }
 
 module.exports = {
-    Autocomplete
+  Autocomplete,
 };
