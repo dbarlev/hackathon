@@ -5,12 +5,12 @@ class Autocomplete {
         this.manager = manager;
     }
 
-    validate(){
+    validate(addedElement){
         this.manager.sameAxisX().hasLinks().isInputValueExists();
-        this.markDom();
+        this.output();
     }
 
-    markDom(){
+    output(){
         console.log("success");
     }
 }

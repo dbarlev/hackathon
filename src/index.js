@@ -5,11 +5,11 @@ const registerValidators = require("./validators/register")
 class Startup {
     init(){
         //TODO: daniel - event and observer are invoked here
+        registerValidators(identifiersManger);
         this.register();
     }
 
     register(){
-        registerValidators(identifiersManger);
         registerIdentifier(new identifiersManger());
     }
 }

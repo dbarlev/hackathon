@@ -1,14 +1,18 @@
 const {Autocomplete} = require("./autocomplete");
 
-const registerIdentifier = (manager) => {
+const registerIdentifier = (manager, addedElement) => {
     const identifiers = [
         Autocomplete
     ]
 
     for(let identifier of identifiers){
         try {
-            const isValid = new identifier(manager).validate();
-            if(isValid) break;
+            const instance = new identifier(manager);
+            const isValid = instance.validate(addedElement);
+            if(isValid){
+                instance.output();
+                break;
+            }
         } catch (error) {
             // handle errors
         }
