@@ -6,13 +6,12 @@ class Autocomplete {
   validate(addedElement) {
     if (!addedElement) return;
 
-    this.manager.elContainsUnRelatedElements(addedElement);
-    this.output();
+    this.manager.valExist(addedElement);
   }
 
-  output(addedElement) {
-    const elem = window.u1Autocomplete.element;
-    elem.style.border = '1px solid red';
+  output(inputElem, addedElement) {
+    const element = inputElem.element;
+    element.style.border = '1px solid red';
 
     addedElement.style.border = '1px solid red';
     console.log('success');

@@ -6,8 +6,9 @@ const registerIdentifier = (manager, addedElement) => {
   for (let identifier of identifiers) {
     try {
       const instance = new identifier(manager);
-      const isValid = instance.validate(addedElement);
-      instance.output();
+      const inputElem = window.u1Autocomplete;
+      instance.validate(addedElement);
+      instance.output(inputElem, addedElement);
       break;
     } catch (error) {
       // handle errors
