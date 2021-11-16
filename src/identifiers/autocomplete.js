@@ -6,7 +6,9 @@ class Autocomplete {
     }
 
     validate(addedElement){
-        this.manager.sameAxisX().hasLinks().valExist(addedElement);
+        if(!addedElement) return;
+
+        this.manager.sameAxisX().valExist(addedElement);
         this.output();
     }
 
