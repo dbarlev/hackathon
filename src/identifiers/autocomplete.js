@@ -3,18 +3,14 @@ class Autocomplete {
     this.manager = manager;
   }
 
-    constructor(manager){
-        this.manager = manager;
-    }
+  validate(addedElement) {
+    if (!addedElement) return;
 
-    validate(addedElement){
-        this.manager.sameAxisX().hasLinks().valExist(addedElement);
-        this.output();
-    }
+    this.manager.sameAxisX().valExist(addedElement);
+    this.output();
+  }
 
-  markDom() {
-    const elem = window.u1Autocomplete.element;
-    elem.style.border = '1px solid red';
+  output() {
     console.log('success');
   }
 }
