@@ -8,7 +8,7 @@ class AutoCompleteValidators{
 
     register(){
         this.manager.prototype.valExist = this.valExist;
-        this.manager.prototype.elContainsUnrelatedElements = this.elContainsUnrelatedElements;
+        this.manager.prototype.elContainsUnRelatedElements = this.elContainsUnRelatedElements;
         this.manager.prototype.isList = this.isList;
     }
 
@@ -17,7 +17,7 @@ class AutoCompleteValidators{
         const walker = getTreeWalker(element);
     
         while(node = walker.nextNode()) {
-            if(!node.nodeValue.toLowerCase().includes('tech')) {
+            if(!node.nodeValue.toLowerCase().includes(text)) {
                 throw new Error();
             }
         }
@@ -25,7 +25,7 @@ class AutoCompleteValidators{
         return this;
     }
 
-    elContainsUnrelatedElements(element) {
+    elContainsUnRelatedElements(element) {
         const result = element.querySelectorAll(TAGS_LIST);
         if(result.length > 0) {
             throw new Error();
@@ -75,8 +75,6 @@ class AutoCompleteValidators{
         return true;
     }
 
-
-    // help method
     getTreeWalker(element) {
         return document.createTreeWalker(element, NodeFilter.SHOW_TEXT, function(node) {
             return (node.nodeValue.trim() !== "") 
