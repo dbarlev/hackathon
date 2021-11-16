@@ -1,5 +1,7 @@
-
 class Autocomplete {
+  constructor(manager) {
+    this.manager = manager;
+  }
 
     constructor(manager){
         this.manager = manager;
@@ -10,11 +12,13 @@ class Autocomplete {
         this.output();
     }
 
-    output(){
-        console.log("success");
-    }
+  markDom() {
+    const elem = window.u1Autocomplete.element;
+    elem.style.border = '1px solid red';
+    console.log('success');
+  }
 }
 
 module.exports = {
-    Autocomplete
+  Autocomplete,
 };
