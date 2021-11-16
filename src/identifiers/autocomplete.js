@@ -3,10 +3,14 @@ class Autocomplete {
     this.manager = manager;
   }
 
-  validate() {
-    this.manager.sameAxisX().hasLinks().isInputValueExists();
-    this.markDom();
-  }
+    constructor(manager){
+        this.manager = manager;
+    }
+
+    validate(addedElement){
+        this.manager.sameAxisX().hasLinks().valExist(addedElement);
+        this.output();
+    }
 
   markDom() {
     const elem = window.u1Autocomplete.element;
