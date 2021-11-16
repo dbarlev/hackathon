@@ -1,20 +1,18 @@
-
 class Autocomplete {
+  constructor(manager) {
+    this.manager = manager;
+  }
 
-    constructor(manager){
-        this.manager = manager;
-    }
+  validate() {
+    this.manager.sameAxisX().hasLinks().isInputValueExists();
+    this.markDom();
+  }
 
-    validate(){
-        this.manager.sameAxisX().hasLinks().isInputValueExists();
-        this.markDom();
-    }
-
-    markDom(){
-        console.log("success");
-    }
+  markDom() {
+    console.log('success');
+  }
 }
 
 module.exports = {
-    Autocomplete
+  Autocomplete,
 };
