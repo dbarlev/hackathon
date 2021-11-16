@@ -7,10 +7,14 @@ class Autocomplete {
     if (!addedElement) return;
 
     this.manager.sameAxisX().valExist(addedElement);
-    this.output();
+    this.output(addedElement);
   }
 
-  output() {
+  output(addedElement) {
+    const elem = window.u1Autocomplete.element;
+    elem.style.border = '1px solid red';
+
+    addedElement.style.border = '1px solid red';
     console.log('success');
   }
 }

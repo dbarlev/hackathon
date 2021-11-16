@@ -7,9 +7,7 @@ const Observer = (validationCb) => {
   const callback = function (mutationsList, observer) {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
-        if (window.u1Autocomplete && window.u1Autocomplete.element) {
-          validationCb(mutation.target);
-        }
+        validationCb(mutation.target);
       }
     }
   };
